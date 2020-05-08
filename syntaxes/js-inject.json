@@ -1,0 +1,26 @@
+{
+	"fileTypes": [],
+	"injectionSelector": "L:source.antlr",
+	"patterns": [
+		{
+			"include": "#comment-js-inject"
+		}
+	],
+	"repository": {
+		"comment-js-inject": {
+			"name": "comment.js-inject-block-injection.antlr",
+			"contentName": "meta.embedded.block.js",
+			"begin": "(^|\\G)\/\\*\\s*\\w+",
+			"end": "\\*\/",
+			"patterns": [
+				{
+                    "include": "source.js"
+                },
+                {
+                    "match": "."
+                }
+			]
+		}
+	},
+    "scopeName": "comment.js-inject.antlr"
+}

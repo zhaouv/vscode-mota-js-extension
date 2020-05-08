@@ -1,0 +1,57 @@
+{
+    "name": "vscode-mota-js-extension",
+    "displayName": "mota-js extension",
+    "description": "mota-js extension",
+    "version": "0.0.1",
+    "publisher": "zhaouv",
+    "repository": {
+        "url": "https://github.com/zhaouv/vscode-mota-js-extension.git"
+    },
+    "bugs": {
+        "url": "https://github.com/zhaouv/vscode-mota-js-extension/issues"
+    },
+    "engines": {
+        "vscode": "^1.20.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "keywords": [
+        "js",
+        "mota",
+        "antlr",
+        "mota-js"
+    ],
+    "contributes": {
+        "languages": [
+			{
+				"id": "antlr",
+				"aliases": [
+					"ANTLR",
+					"antlr"
+				],
+				"extensions": [
+					".g",
+					".g4"
+				]
+            }
+        ],
+        "grammars": [
+            {
+				"language": "antlr",
+				"scopeName": "source.antlr",
+				"path": "./syntaxes/antlr.json"
+			},
+            {
+                "injectTo": [
+                    "source.antlr"
+                ],
+                "scopeName": "comment.js-inject.antlr",
+                "path": "./syntaxes/js-inject.json",
+                "embeddedLanguages": {
+					"meta.embedded.block.js": "javascript"
+				}
+            }
+        ]
+    }
+}
